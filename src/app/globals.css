@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0, 0%, 100%;
     --foreground: 0, 1%, 12%, 1;
 
     --card: 0 0% 100%;
@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
 
-    --primary: 0, 0%, 0% /* 248, 41%, 55%, 1 */;
+    --primary: 248, 41%, 55%, 1;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 96.1%;
@@ -45,6 +45,19 @@
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-poppins text-foreground;
+}
+
 h1 {
-  @apply font-poppins text-[75px] font-semibold leading-[90px] tracking-[-3px] text-foreground;
+  @apply text-[75px] font-semibold leading-[90px] tracking-[-3px];
+}
+
+h2 {
+  @apply text-[50px] font-bold leading-[60px] tracking-[0.5px];
 }

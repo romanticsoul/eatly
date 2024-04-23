@@ -5,6 +5,7 @@ const variants = {
   ghost: cn('bg-transparent hover:bg-[#ededed]'),
   flat: cn('bg-[#ededed]'),
   default: cn('bg-primary text-[#f9f9f9]'),
+  outline: cn('bg-transparent border text-primary border-primary'),
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

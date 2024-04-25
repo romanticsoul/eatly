@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Button } from './button'
-import { Logo } from './logo'
+import { Button } from '../button'
+import { Logo } from '../logo'
 
 export function Header() {
   return (

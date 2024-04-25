@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Header } from '@/components/header'
+import { Header } from '@/components/layout/header'
 import { Inter, Poppins } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import { Footer } from '@/components/layout/footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -10,8 +11,9 @@ const inter = Inter({
 })
 
 const poppins = Poppins({
-  weight: ['600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
+  style: ['italic', 'normal'],
   variable: '--font-poppins',
 })
 
@@ -35,6 +37,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

@@ -3,15 +3,16 @@ import { PostCard } from '@/components/postCard'
 import { FoodCard } from '@/components/foodCard'
 import { Posts, Foods } from '@/types/mockapi'
 import Image from 'next/image'
+import Link from 'next/link'
+import { CustomerCarousel } from '@/components/layout/CustomerCarousel'
+import { Input } from '@/components/input'
 
 export default async function Home() {
   const posts: Posts = await fetch(
     'https://6625022f04457d4aaf9d8f31.mockapi.io/posts',
-    { cache: 'no-cache' },
   ).then(r => r.json())
   const foods: Foods = await fetch(
     'https://6625022f04457d4aaf9d8f31.mockapi.io/foods',
-    { cache: 'no-cache' },
   ).then(r => r.json())
 
   return (
@@ -55,7 +56,7 @@ export default async function Home() {
           <div className="relative before:absolute before:-right-10 before:-top-16 before:z-10 before:content-[url('/Illustration1.svg')] after:absolute after:bottom-12 after:left-2 after:z-10 after:content-[url('/Illustration2.svg')]">
             <span className="absolute right-7 top-20 z-10 content-[url('/Illustration3.svg')]"></span>
             <Image
-              src="/hero.jpg"
+              src="/hero.png"
               width={650}
               height={600}
               alt="Hero image"
@@ -161,7 +162,133 @@ export default async function Home() {
             <FoodCard key={food.id} {...food} />
           ))}
         </div>
+        <div className="mt-16 flex justify-end px-4">
+          <Link className="mt-1 flex items-center text-xl font-medium" href="/">
+            View All
+            <Image
+              src="/arrow-right2.svg"
+              alt="arrow-right"
+              width={20}
+              height={20}
+              className="ml-4"
+            />
+          </Link>
+        </div>
       </section>
+
+      <div className="container mb-24 mt-32 border-b"></div>
+
+      <section className="container flex justify-between">
+        <div>
+          <h2 className="ml-3 mt-1">
+            Control <span className="text-primary">Purchases</span>
+            <br />
+            Via Dashboard
+          </h2>
+          <div className="mt-12 grid gap-4">
+            <div
+              className="z-10 flex w-[345px] gap-4 rounded-xl bg-white px-4 py-1"
+              style={{ boxShadow: '0px 20.07px 30.1px 0px #4646461A' }}
+            >
+              <Image
+                src="https://i.imgur.com/dkPS7Q5.png"
+                alt="Food image"
+                width={80}
+                height={80}
+                className="aspect-square object-contain"
+              />
+              <div className="flex-1">
+                <h4 className="ml-[2px] mt-3 text-[19px] font-bold">
+                  Chicken Hell
+                </h4>
+                <p className="text-xs font-bold text-[#323142]">On The Way</p>
+                <div className="text-end text-xs font-bold text-[#ACADB9]">
+                  3:09 PM
+                </div>
+              </div>
+            </div>
+            <div className="z-0 flex w-[345px] gap-4 rounded-xl bg-white px-4 py-1">
+              <Image
+                src="https://i.imgur.com/VgPOIXk.png"
+                alt="Food image"
+                width={80}
+                height={80}
+                className="aspect-square object-contain"
+              />
+              <div className="flex-1">
+                <h4 className="ml-[2px] mt-3 text-[19px] font-bold">
+                  Swe Dish
+                </h4>
+                <p className="text-xs font-bold text-[#323142]">Delivered</p>
+                <p className="text-end text-xs font-bold text-[#ACADB9]">
+                  Yesterday
+                </p>
+              </div>
+            </div>
+            <div className="z-0 flex w-[345px] gap-4 rounded-xl bg-white px-4 py-1">
+              <Image
+                src="https://i.imgur.com/M9O0YSH.png"
+                alt="Food image"
+                width={80}
+                height={80}
+                className="aspect-square object-contain"
+              />
+              <div className="flex-1">
+                <h4 className="ml-[2px] mt-3 text-[19px] font-bold">
+                  Fish Hell Veg
+                </h4>
+                <p className="text-xs font-bold text-[#F1534E]">Cancelled</p>
+                <p className="text-end text-xs font-bold text-[#ACADB9]">
+                  Yesterday
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Image
+            src="/purchase-card.svg"
+            alt="purchases card image"
+            width={534}
+            height={300}
+            style={{ boxShadow: '5.95px 71.35px 35.67px 0px #E5E5E5B2' }}
+            className="mt-1 overflow-hidden rounded-[26px]"
+          />
+        </div>
+      </section>
+
+      <div className="container mb-24 mt-32 border-b"></div>
+
+      <section>
+        <h2 className="container mb-16 pt-2 text-center text-[45px]">
+          <span className="text-primary">Customer</span> Say
+        </h2>
+        <CustomerCarousel />
+      </section>
+
+      <div className="container mb-52 mt-16">
+        <form className="relative ml-9 rounded-[30px] bg-primary bg-[url('/subscribe-bg.svg')] p-16 pt-9 text-background">
+          <h2 className="text-[70px] font-extrabold leading-[105px] text-inherit">
+            GET 50%
+          </h2>
+          <Input
+            placeholder="Enter Your Email Address"
+            className="mt-2 w-2/5"
+            appendInner={
+              <Button className="py-3 text-[15px] font-medium uppercase tracking-[3%]">
+                Subscribe
+              </Button>
+            }
+          />
+          <Image
+            src="/food.png"
+            alt="food image"
+            width={275}
+            height={275}
+            className="absolute -bottom-20 right-16 mb-2 mr-2 aspect-square w-[300px] object-contain"
+          />
+        </form>
+      </div>
     </main>
   )
 }

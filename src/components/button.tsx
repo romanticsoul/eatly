@@ -21,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        'rounded-2xl p-5 px-7 py-4 text-lg font-bold transition-all duration-200',
+        'rounded-2xl p-5 px-7 py-4 font-poppins text-lg font-bold transition-all duration-200',
         variants[variant],
         className,
       )}

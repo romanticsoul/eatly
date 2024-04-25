@@ -22,7 +22,7 @@ export function FoodCard({
           boxShadow: '5.95px 71.35px 35.67px 0px #E5E5E5B2',
           borderColor: '#F4F4F6',
         }}
-        className="relative overflow-hidden rounded-[34px] border bg-white pb-9 pt-5"
+        className="relative overflow-hidden rounded-[34px] border bg-white pb-9 pt-5 transition-transform duration-200 hover:scale-105"
       >
         <Image
           src={img_url}

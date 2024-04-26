@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="ru">
       <body
         className={cn(
-          'min-h-screen overflow-y-scroll bg-background font-sans text-[#606060] antialiased xl:text-lg',
+          'min-h-screen overflow-x-hidden bg-background font-sans text-[#606060] antialiased xl:text-lg',
           `${inter.variable} ${poppins.variable}`,
         )}
       >

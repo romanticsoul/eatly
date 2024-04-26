@@ -26,7 +26,7 @@ export function PostCard({
         />
         <div className="px-8 pb-2 pt-3">
           <Tag text={tag}></Tag>
-          <h3 className="relative top-1 ml-[1px] text-[25px] font-bold tracking-[.3px]">
+          <h3 className="relative top-1 ml-px text-[25px] font-bold tracking-[.3px]">
             {title}
           </h3>
           <div className="mt-1 flex items-center">
@@ -36,13 +36,14 @@ export function PostCard({
             <span className='relative top-[2px] ml-3 before:mr-2 before:content-[url("/star.svg")]'>
               {rating}
             </span>
-            <button className="relative bottom-1 left-2 ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#DAD8ED]">
+            <button className="relative bottom-1 left-2 ml-auto flex size-10 items-center justify-center rounded-full bg-[#DAD8ED]">
               <span className="sr-only">Add to Favorites</span>
               <Image
                 src={'/bookmark.svg'}
                 alt="bookmark"
                 width={18}
                 height={18}
+                style={{ height: 18, width: 18 }}
               />
             </button>
           </div>

@@ -29,10 +29,10 @@ export function CustomerCarousel() {
 
   return (
     <div className="embla h-[500px]">
-      <div className="container relative top-[327px] flex h-0 justify-end">
-        <div className="embla__progress relative h-[11px] w-[calc(100%-528px-53px)] overflow-hidden rounded-full bg-[#C4C2D5]">
+      <div className="container relative flex h-0 max-md:top-[400px] max-md:justify-center md:top-[327px] md:justify-end">
+        <div className="embla__progress relative h-[11px] overflow-hidden rounded-full bg-[#C4C2D5] max-md:w-5/6 md:w-[calc(100%-528px-53px)]">
           <div
-            className="embla__progress__bar absolute -left-full bottom-0 top-0 h-full w-full rounded-full bg-primary"
+            className="embla__progress__bar absolute inset-y-0 -left-full size-full rounded-full bg-primary"
             style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
           />
         </div>
@@ -44,7 +44,7 @@ export function CustomerCarousel() {
         <div className="embla__container container flex">
           {slides.map(index => (
             <div
-              className="embla__slide group mr-[46px] min-w-[528px]"
+              className="embla__slide group mr-[46px] min-w-[528px] max-md:min-w-full"
               key={index}
             >
               <div className="embla__slide__number">
@@ -73,7 +73,7 @@ export function CustomerCarousel() {
                       className="ml-auto mr-2"
                     />
                   </div>
-                  <p className="text-justify font-poppins text-lg italic leading-[26.71px]">
+                  <p className="line-clamp-5 text-justify font-poppins text-lg italic leading-[26.71px]">
                     “ Online invoice payment helps companies save time, are
                     faster and save maximum effort for the clients and save
                     maximum effort. Online invoice payment helps companies save

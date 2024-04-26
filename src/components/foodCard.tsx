@@ -35,7 +35,7 @@ export function FoodCard({
           <div className="relative right-4 scale-[.8]">
             <Tag text={tag}></Tag>
           </div>
-          <h3 className="ml-[1px] mt-1 text-[22px] font-bold tracking-[.3px]">
+          <h3 className="ml-px mt-1 text-[22px] font-bold tracking-[.3px]">
             {name}
           </h3>
           <div className="relative right-2 mt-1 flex scale-90 items-center">
@@ -47,11 +47,11 @@ export function FoodCard({
             </span>
           </div>
           <div className="mt-3 flex items-center">
-            <p className="font- text-2xl font-bold">
+            <p className="text-2xl font-bold">
               ${priceInt}
               <span className="text-lg text-[#8E97A6]">.{priceDec}</span>
             </p>
-            <button className="relative bottom-1 right-[1px] ml-auto flex h-10 w-10 items-center justify-center rounded-lg bg-[#323142]">
+            <button className="relative bottom-1 right-px ml-auto flex size-10 items-center justify-center rounded-lg bg-[#323142]">
               <span className="sr-only">Add to cart</span>
               <Image
                 src={'/plus.svg'}

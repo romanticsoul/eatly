@@ -55,9 +55,9 @@ h6 {
 }
 
 h1 {
-  @apply text-[75px] font-semibold leading-[90px] tracking-[-3px];
+  @apply text-5xl font-semibold xl:text-[75px] xl:leading-[90px] xl:tracking-[-3px];
 }
 
 h2 {
-  @apply text-[50px] font-bold leading-[60px] tracking-[0.5px];
+  @apply text-[50px] font-bold leading-[60px] tracking-[0.5px] max-lg:text-[36px];
 }

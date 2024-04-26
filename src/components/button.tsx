@@ -12,22 +12,19 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: keyof typeof variants
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  className,
-  variant = 'default',
-  ...props
-}) => {
-  return (
-    <button
-      className={cn(
-        'rounded-2xl p-5 px-7 py-4 font-poppins text-lg font-bold transition-all duration-200',
-        variants[variant],
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-}
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, className, variant = 'default', ...props }, ref) => {
+    return (
+      <button
+        className={cn(
+          'rounded-2xl p-5 px-7 py-4 font-poppins text-lg font-bold transition-all duration-200',
+          variants[variant],
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </button>
+    )
+  },
+)

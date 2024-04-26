@@ -15,7 +15,7 @@ pnpm dev
 
 ## Внимание
 
-Команда `npm run lint` не работает, так как [кто-то что-то обновил и всё сломалось](https://github.com/vercel/next.js/issues/64409), можно починить установив более старую версию пакетов `next` и `eslint-config-next`, например:
+Команда `npm run lint` не работает, так как [кто-то что-то обновил и всё сломалось](https://github.com/vercel/next.js/issues/64409), можно "починить" установив более старую версию пакетов `next` и `eslint-config-next`, например:
 
 ```bash
 "dependencies": {
